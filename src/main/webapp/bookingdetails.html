@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:border="http://java.sun.com/xml/ns/persistence/orm">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,54 +9,102 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <title>restable</title>
+    <title>BookingDetails</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restolist Website | Home</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css"  media="all" />
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/responsiveslides.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="js/responsiveslides.min.js"></script>
+
+    <!---start-Wrap--->
+    <!---start-header--->
+    <div class="header" style="width: 100%">
+        <div class="wrap">
+            <div class="header-top">
+                <div class="logo">
+                    <a href="index.html"><h2 style="font-family:Sofia,sans-serif; font-size:50px;">Restolist</h2></a>
+                </div>
+                <div class="contact-info">
+                    <p class="phone">Call us : <a href="#">9860767468</a></p>
+                    <p class="gpa">Gpa : <a href="#">View map</a></p>
+                    <p id="emailId" ></p>
+
+                </div>
+                <div class="clear"> </div>
+            </div>
+        </div>
+    </div>
+    <hr>
 </head>
+<body>
 <style>
     .container{
-        margin-top:15%;
+        margin-top:4%;
         font-weight:bold;
-        width: 400px;
+        width: 100%;
         padding:1%;
         border-radius: 15px;
+        background-color: white;
+        opacity: 0.7;
     }
     body{
-        margin-top: 5%;
-        background-color: white;
+        background: url("images/slider1.jpg");
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 </style>
-<body>
-<h3><center>Your Booking Details</center></h3>
 <div class="container">
-    <table class="table table-bordered table-sripped">
+    <h1><center>LIST OF BOOKINGS</center></h1>
+    <table class="table table-bordered table-sripped" >
         <thead>
         <tr>
-            <th>Email</th>
-            <th>Date</th>
-            <th>Name</th>
-            <th>Number of People</th>
-            <th>Phone Number</th>
-            <th>Restaurant</th>
+            <th>NAME</th>
+            <th>DATE</th>
+            <th>EMAIL</th>
+            <th>NO. OF PEOPLE</th>
+            <th>PHONE</th>
+            <th>RESTAURANT</th>
         </tr>
         </thead>
         <tbody id="data">
-
         </tbody>
     </table>
 </div>
-<script>
-    fetch("http://localhost:8085/booking").then(
-        res=>{
-            res.json().then(
-                data=>{
+<script type="text/javascript">
+
+        console.log("hello");
+        document.getElementById("emailId").innerHTML="Welcome - "+sessionStorage.getItem("user");
+
+        let emailId = sessionStorage.getItem("email");
+        user = {
+            "email": emailId
+        }
+        let options = {
+            method: 'POST',
+            headers: {
+                'Content-Type':
+                    'application/json;charset=utf-8'
+            },
+            body: JSON.stringify(user)
+        }
+
+    fetch("http://localhost:8085/booking",options)
+        .then(res=> res.json())
+        .then(data=>{
                     console.log(data);
                     if(data.length > 0){
                         var temp = "";
 
                         data.forEach((u)=>{
+                           /* window.alert(u.name);*/
                             temp +="<tr>";
-                            temp +="<td>"+u.email+"</td>";
-                            temp +="<td>"+u.date+"</td>";
                             temp +="<td>"+u.name+"</td>";
+                            temp +="<td>"+u.date+"</td>";
+                            temp +="<td>"+u.email+"</td>";
                             temp +="<td>"+u.noofpeople+"</td>";
                             temp +="<td>"+u.phone+"</td>";
                             temp +="<td>"+u.restolist+"</td></tr>";
@@ -65,8 +113,6 @@
                     }
                 }
             )
-        }
-    )
 </script>
 </body>
 </html>

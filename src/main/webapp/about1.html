@@ -1,6 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <title>Restolist Website | Home</title>
+  <link href="css/style.css" rel="stylesheet" type="text/css"  media="all" />
+  <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/responsiveslides.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script src="js/responsiveslides.min.js"></script>
+  <script>
+    // You can also use "$(window).load(function() {"
+    $(function ()
+    {
+      // Slideshow 1
+      $("#slider1").responsiveSlides({
+        maxwidth: 1600,
+        speed: 600
+      });
+    });
+  </script>
+  <!---start-Wrap--->
+  <!---start-header--->
+  <div class="header">
+    <div class="wrap">
+      <div class="header-top">
+        <div class="logo">
+          <a href="index.html"><h2 style="font-family:Sofia,sans-serif; font-size:50px;">Restolist</h2></a>
+        </div>
+        <div class="contact-info">
+          <p class="phone">Call us : <a href="#">9860767468</a></p>
+          <p class="gpa">Gpa : <a href="#">View map</a></p>
+
+        </div>
+        <div class="clear"> </div>
+      </div>
+    </div>
+  </div>
+  <div class="header-top-nav">
+    <div class="wrap">
+      <ul>
+        <li class="active"><a href="index.html">Home</a></li>
+        <!--<li><a href="about1.html">About</a></li>
+        &lt;!&ndash;<li><a href="gallery.html">restaurants</a></li>
+        <li><a href="contact.html">Contact</a></li>&ndash;&gt;
+        <li><a href="login.html">login</a></li>-->
+        <div class="clear"> </div>
+      </ul>
+    </div>
+  </div>
+  </div>
   <title>Dashboard user profile page design using Bootstrap 4</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -73,7 +121,7 @@
 
 <body>
 
-<h1>OUR SQUAD</h1><br><br><br>
+<h1 style="margin-top: 220px">OUR SQUAD</h1><br><br><br>
 <br>
 
 <div class="container">

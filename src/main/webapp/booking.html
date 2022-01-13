@@ -65,6 +65,31 @@
 	</style>
 </head>
 <body>
+<script>
+
+		fetch("http://localhost:8085/restaurant").then(
+		res=>{
+		res.json().then(
+				data=>{
+					console.log(data);
+					if(data.length > 0){
+						var temp = "<select style='margin-bottom: 30px;' name='restolist' class='form-control bg-transparent'><option disabled='' selected=''> please select the Resturant</option>";
+
+
+						data.forEach((u)=>{
+							temp+="<option value="+u.resname+">"+u.resname+"</option>"
+
+
+						})
+						document.getElementById("data").innerHTML=temp+"</select>";
+						console.log(temp,"debug");
+					}
+				}
+		)
+	}
+		)
+</script>
+
 <section class="container-fluid">
 
 	<div class="wrapper">
@@ -78,16 +103,11 @@
 						<div class="col-6">
 							<input type="text" name="name" class="form-control bg-transparent" placeholder="Name" style="margin-bottom: 30px;">
 						</div>
-						<div class="col-6">
-							<select style="margin-bottom: 30px;" name="restolist" class="form-control bg-transparent">
-								<option disabled="" selected=""> please select the Resturant</option>
-								<option value="A2B RESTUARANT">A2B RESTUARANT</option>
-								<option value="COAL BARBEQUE"> COAL BARBEQUE</option>
-								<option value="NH7 REFUEL">NH7 REFUEL</option>
-								<option value="DAKSKIN">DAKSKIN</option>
-								<option value="BAZAAR">BAZAAR</option>
-								<option value="KRISHNA SAGAR">KRISHNA SAGAR</option>
-							</select>
+						<div class="col-6" id="data">
+
+
+
+
 
 						</div>
 						<div class="col-12">
