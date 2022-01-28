@@ -50,24 +50,43 @@
     padding: 12px 30px;
     cursor: pointer;
     font-size: 20px;
+    text-align: center;
   }
 
 
   .btn:hover {
     background-color: RoyalBlue;
   }
+
+  button{
+    background: #eee;
+    padding:6px 12px;
+    margin:15px 0 10px;
+    width: 100%;
+    display: inline-block;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    outline: none;
+  }
 </style>
 <body>
+
+<script type="text/javascript">
+  document.getElementById("emailId").innerHTML=" "+sessionStorage.getItem("user");
+</script>
 <div class="header">
   <div class="wrap">
     <div class="header-top">
       <div class="logo">
-        <a href="homepage.html"><h2 style="font-family:Sofia,sans-serif; font-size:50px;"><i style='font-size:36px'></i> Restolist</h2></a>
+        <a href="#"><h2 style="font-family:Sofia,sans-serif; font-size:50px;"><i style='font-size:36px'></i> Restolist</h2></a>
         <!--<a href="login.html" style="margin-left: 600%;"><button style='font-size:24px;color: #18d26e'>Back <i class='fas fa-chevron-circle-left'></i></button></a>-->
       </div>
       <div class="contact-info">
         <p class="phone">Call us : <a href="#">9860767468</a></p>
         <p class="gpa">Gpa : <a href="https://goo.gl/maps/kunb7UF9N1BVKJaB9">View map</a></p>
+        <i class="fa fa-user-circle" style="font-size:24px; color: #995c00" id="emailId"></i>
       </div>
       <div class="clear"> </div>
     </div>
@@ -87,11 +106,10 @@
     <i class="checkmark">✓</i>
   </div>
   <h1>Success</h1>
-  <p>We received your purchase request;<br/> we'll be in touch shortly!</p><br>
-  <form action="download">
-    <!--<button type="submit"  class="btn"><i class="fa fa-download"></i>Download</button>-->
-    <button class="btn"><i class="fa fa-download"></i> Download</button>
-  </form>
+  <p>You're Booking has been Confirmed;<br/> Please download your receipt!</p><br>
+  <div>
+    <button style="background-color: #ffc064" type="button" class=""><i class="fa fa-download"></i><a href="bookingdetails.html">RECEIPT</a></button>
+  </div>
 </div>
 <!--<div class="gallery-button"><a href="gallery.html">Back to Home</a></div>-->
 </br></br>

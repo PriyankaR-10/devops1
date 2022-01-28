@@ -48,7 +48,6 @@ public class RestaurantController {
     @PostMapping(PropertyConstants.BOOKINGLIST)
     public List<BookingDetails> alldataById(@RequestBody User user)
     {
-
         return bookingRepo.findByIdEmail(user.getEmail());
     }
 }

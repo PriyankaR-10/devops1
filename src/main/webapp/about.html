@@ -5,6 +5,7 @@
   <link href="css/about.css" rel="stylesheet" type="text/css"  media="all" />
   <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="css/responsiveslides.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
   <script src="js/responsiveslides.min.js"></script>
@@ -29,7 +30,8 @@
         </div>
         <div class="contact-info">
           <p class="phone">Call us : <a href="#">9860767468</a></p>
-          <p class="gpa">Gpa : <a href="#">View map</a></p>
+          <p class="gpa">Gpa : <a href="https://goo.gl/maps/kunb7UF9N1BVKJaB9">View map</a></p>
+          <i class="fa fa-user-circle" style="font-size:24px; color: #995c00" id="emailId"></i>
 
         </div>
         <div class="clear"> </div>
@@ -118,6 +120,9 @@
 </head>
 
 <body>
+<script type="text/javascript">
+  document.getElementById("emailId").innerHTML=" "+sessionStorage.getItem("user");
+</script>
 
 <h1 style="margin-top: 300px">OUR SQUAD</h1><br><br><br>
    <br>
