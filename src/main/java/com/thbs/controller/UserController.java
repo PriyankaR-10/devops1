@@ -4,7 +4,6 @@ package com.thbs.controller;
 import com.thbs.constants.PropertyConstants;
 import com.thbs.model.BookingDetails;
 import com.thbs.model.Customer;
-import com.thbs.model.Download;
 import com.thbs.model.Users;
 import com.thbs.repository.*;
 
@@ -67,10 +66,10 @@ public class UserController
      * @return - Payment Page
      */
     @RequestMapping(PropertyConstants.SAVEBOOK)
-    public String booking(HttpServletRequest request, BookingDetails books,Download dw)
+    public String booking(HttpServletRequest request, BookingDetails books)
     {
-        System.out.println(books.getEmail()+"before setting");
-        email=books.getEmail();
+        /*System.out.println(books.getEmail()+"before setting");
+        email=books.getEmail();*/
         bookingRepo.save(books);
         return "Payment.html";
     }

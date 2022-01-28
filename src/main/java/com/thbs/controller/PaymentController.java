@@ -1,7 +1,6 @@
 package com.thbs.controller;
 
 import com.thbs.constants.PropertyConstants;
-import com.thbs.model.Download;
 import com.thbs.model.Payment;
 import com.thbs.repository.PaymentRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,8 +23,6 @@ public class PaymentController {
     PaymentRepo paymentRepo;
 
     @Autowired
-    Download download;
-    @Autowired
     UserController userController;
     /**
      * Check for Payment credentials
@@ -38,12 +35,12 @@ public class PaymentController {
     {
             return "success.html";
     }
-
+/*
     @RequestMapping(PropertyConstants.DOWNLOAD)
     public String download()
     {
        download.setEmail(userController.email);
         download.writeReceipt();
         return "gallery.html";
-    }
+    }*/
 }
