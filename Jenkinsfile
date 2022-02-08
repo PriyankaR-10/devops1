@@ -25,7 +25,7 @@ pipeline {
                   nexusUrl: '18.218.174.48:8081', 
                   nexusVersion: 'nexus3', 
                   protocol: 'http', 
-                  repository: 'project', 
+                  repository: 'maven-snapshots', 
                   version: '0.0.1-SNAPSHOT'
             }
         }
