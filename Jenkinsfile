@@ -11,7 +11,22 @@ pipeline {
         }
         stage('Upload War To Nexus'){
             steps{ 
-                nexusArtifactUploader artifacts: [[artifactId: 'RestaurantProj', classifier: '', file: 'target/RestaurantProj-0.0.1-SNAPSHOT.jar', type: 'jar']], credentialsId: 'b6a3d768-7ac9-4631-be3f-f83b0ee2aef3', groupId: 'com.thbs', nexusUrl: '18.218.174.48:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'maven-snapshots', version: '0.0.1-SNAPSHOT'
+                nexusArtifactUploader artifacts: 
+                    [
+                        [
+                            artifactId: 'RestaurantProj', 
+                            classifier: '', 
+                            file: 'target/RestaurantProj-0.0.1-SNAPSHOT.jar', 
+                            type: 'jar'
+                        ]
+                    ], 
+                    credentialsId: '4e22854d-38b6-48e9-b65e-9c796ff36cf9', 
+                    groupId: 'com.thbs', 
+                    nexusUrl: '18.191.179.163:8081', 
+                    nexusVersion: 'nexus3', 
+                    protocol: 'http', 
+                    repository: 'project', 
+                    version: '0.0.1-SNAPSHOT'
             }
         }
     }
