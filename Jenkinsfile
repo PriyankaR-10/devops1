@@ -22,7 +22,7 @@ pipeline {
                   ], 
                   credentialsId: '59b4ac10-1df6-4993-81d3-c4e96b7bddf2', 
                   groupId: 'com.thbs', 
-                  nexusUrl: '3.23.94.253:8081', 
+                  nexusUrl: '18.218.174.48:8081', 
                   nexusVersion: 'nexus3', 
                   protocol: 'http', 
                   repository: 'maven-snapshots', 
